@@ -6,9 +6,13 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@components/*": ["./src/components/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@images/*": ["./src/images/*"],
       "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@config/*": ["./src/config/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"]
     }
   }
 }
