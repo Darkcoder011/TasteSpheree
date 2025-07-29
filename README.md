@@ -872,9 +872,35 @@ graph LR
 ```
 
 ### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+1. **Connect Repository**: Connect your GitHub repository to Vercel
+2. **Environment Variables**: Add the following environment variables in Vercel dashboard:
+   ```
+   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   VITE_QLOO_API_KEY=your_qloo_api_key_here
+   ```
+3. **Build Settings**: Vercel should automatically detect the settings, but ensure:
+   - Framework Preset: `Vite`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+4. **Deploy**: Deploy automatically on push to main branch
+
+#### Troubleshooting Vercel Deployment
+If you encounter build errors:
+
+**Terser Error**: The project includes terser configuration for production builds
+- Ensure `terser` is in devDependencies (already included)
+- The build script automatically updates browserslist data
+
+**Environment Variables**: Make sure to add your API keys in Vercel dashboard:
+- Go to Project Settings → Environment Variables
+- Add `VITE_GEMINI_API_KEY` and `VITE_QLOO_API_KEY`
+
+**Build Optimization**: The project includes:
+- Automatic browserslist updates
+- Optimized chunk splitting
+- Terser minification with console removal
+- Security headers and caching optimization
 
 ### Netlify
 1. Connect repository to Netlify
